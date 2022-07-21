@@ -9,6 +9,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private NetworkPlayerSpawner playerSpawner;
 
     [SerializeField] private GameObject loading;
+    [SerializeField] private AudioSource pp;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+        pp.enabled = false;
         PhotonNetwork.ConnectUsingSettings();
     }
 
@@ -45,6 +47,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("Joined Room");
 
         loading.SetActive(false);
+        pp.enabled = true;
 
         base.OnJoinedRoom();
     }

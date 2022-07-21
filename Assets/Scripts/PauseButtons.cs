@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PauseButtons : MonoBehaviour
 {
-    [SerializeField] private Player player;
+    [SerializeField] private PauseMenu pauseMenu;
 
     public void UnpauseGame()
     {
-        player.setPaused(false);
+        pauseMenu.setPaused(false);
     }
 
     public void QuitGame()
